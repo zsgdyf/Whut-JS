@@ -9,13 +9,7 @@ var headers = {
     'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0"
 };
 
-fs.readFile("id.json", 'utf-8', function (err, data) {
-    if (err) {
-        console.log(err);
-    } else {
-        userId = JSON.parse(data);
-    }
-
+function getMessage(userId) {
     var userName = userId.username;
     var userName1 = crypto.createHash('md5').update(userName).digest('hex');
     console.log(userName1);
@@ -47,4 +41,13 @@ fs.readFile("id.json", 'utf-8', function (err, data) {
                 console.log(message);
             }
         });
+}
+fs.readFile("id.json", 'utf-8', function (err, data) {
+    if (err) {
+        console.log(err);
+    } else {
+        var userId = JSON.parse(data);
+    }
+
+    getMessage(userId);
 });
