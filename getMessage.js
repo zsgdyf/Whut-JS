@@ -21,10 +21,10 @@ function getMessage(userId) {
     var forms = {
         'code': "4332694498",
         //'password': "",
-        'password1': password1, // md5
+        'userName1': userName1, // md5
         'type': "xs",
         //'userName': "",
-        'userName1': userName1, // username + password sha1
+        'password1': password1, // username + password sha1
         'webfinger': "b9a7a7901c83c4c0dad90bd2bbf19498"
     };
     superagent
